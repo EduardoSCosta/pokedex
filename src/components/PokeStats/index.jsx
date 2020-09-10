@@ -8,9 +8,9 @@ const PokeStats = ({
   return (
     <>
       {stats && stats.map((stat) => {
-      return (<p 
+      return (<li 
                 key={stat.stat.name}>{stat.stat.name} {stat.base_stat}
-              </p>);
+              </li>);
       })}
     </>
   );

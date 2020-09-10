@@ -16,15 +16,30 @@ const Pokemon = ({match}) => {
     setPokeData(pokeResponse.data);
   }
 
+  const capitalize = (name) => {
+    let capitalized = name.charAt(0).toUpperCase() + name.slice(1);
+  
+    return capitalized;
+  }
+
   useEffect(() => {
     api_call();
   }, []);
 
   return(
     <div>
-      <h1>#{pokemonId} {pokeData.name}</h1>
+      <h1>#{pokemonId} {pokeData.name && capitalize(pokeData.name)}</h1>
       <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`} alt="Sprite"/>
+      <div className="types-container">
+        {pokeData.types && pokeData.types.map((pokeType) => {
+        return (<p className={`poke-type ${pokeType.type.name}-type`}
+                  key={pokeType.type.name}>{pokeType.type.name}
+                </p>);
+        })}
+      </div>
+      <ul>
       <PokeStats stats={pokeData.stats}/>
+      </ul>
     </div>
   );
 }
