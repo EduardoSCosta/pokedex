@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
 import api from '../../services/api.js';
+import PokeStats from '../../components/PokeStats';
 
 const Pokemon = ({match}) => {
 
@@ -12,7 +13,6 @@ const Pokemon = ({match}) => {
 
     const pokeRequest = api.get(`pokemon/${pokemonId}`);
     const pokeResponse = await pokeRequest;
-    console.log(pokeResponse.data);
     setPokeData(pokeResponse.data);
   }
 
@@ -20,14 +20,20 @@ const Pokemon = ({match}) => {
     api_call();
   }, []);
 
-
   return(
     <div>
-      <h1>#{pokemonId}</h1>
-      <h1>{pokeData.name}</h1>
+      <h1>#{pokemonId} {pokeData.name}</h1>
       <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`} alt="Sprite"/>
+      <PokeStats stats={pokeData.stats}/>
     </div>
   );
 }
 
 export default Pokemon;
+
+/*
+      {pokeData.stats.map((poke) => {
+      return (<p 
+                key={poke.stat.name}>{poke.stat.name} {poke.base_stat}</p>);
+      })}
+*/

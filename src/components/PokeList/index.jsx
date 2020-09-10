@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 const PokeList = ({
   pokemons
 }) => {
-  const numberTest = 3;
 
   return (
     <>
