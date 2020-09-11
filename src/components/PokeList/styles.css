@@ -1,11 +1,19 @@
 .poke-name {
   text-decoration: none;
   color: #000000;
-  margin-left: 10px;
-  font-size: 1.3rem;
-  border: solid 1px;
-  border-bottom: none;
+  font-size: 1.2rem;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: #c2c2c2;
   width: 100%;
-  text-align: left;
-  padding: 5px;
+  padding: 10px 0 10px 0;
+}
+
+.poke-name:hover {
+  background-color: #e2e2e2;
+}
+
+.poke-name-text {
+  position: relative;
+  left: 20px;
 }

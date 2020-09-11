@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.css';
 import {Link} from 'react-router-dom';
+import pokeEntry from '../../functions/pokeEntry';
+import capitalize from '../../functions/capitalize';
 
 const PokeList = ({
   pokemons
@@ -11,18 +13,13 @@ const getPokeId = (url) => {
   return pokeId;
 }
 
-const capitalize = (name) => {
-  let capitalized = name.charAt(0).toUpperCase() + name.slice(1);
-
-  return capitalized;
-}
-
   return (
     <>
       {pokemons.map((poke) => {
       return (<Link 
                 className="poke-name" to={`/pokemon/${getPokeId(poke.pokemon_species.url)}`} 
-                key={poke.entry_number}>#{poke.entry_number} {capitalize(poke.pokemon_species.name)}
+                key={poke.entry_number}>
+                  <span className="poke-name-text"> {pokeEntry(poke.entry_number)} {capitalize(poke.pokemon_species.name)}</span>
               </Link>);
       })}
     </>

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './styles.css';
 import api from '../../services/api.js';
 import PokeStats from '../../components/PokeStats';
+import PageHeader from '../../components/PageHeader';
 
 const Pokemon = ({match}) => {
 
@@ -24,10 +25,11 @@ const Pokemon = ({match}) => {
 
   useEffect(() => {
     api_call();
-  }, []);
+  });
 
   return(
-    <div>
+    <>
+      <PageHeader/>
       <h1>#{pokemonId} {pokeData.name && capitalize(pokeData.name)}</h1>
       <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`} alt="Sprite"/>
       <div className="types-container">
@@ -40,7 +42,7 @@ const Pokemon = ({match}) => {
       <ul>
       <PokeStats stats={pokeData.stats}/>
       </ul>
-    </div>
+    </>
   );
 }
 
