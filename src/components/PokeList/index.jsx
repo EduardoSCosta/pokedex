@@ -9,7 +9,7 @@ const PokeList = ({
 }) => {
 
 const getPokeId = (url) => {
-  let pokeId = url.replace(/https:\/\/pokeapi.co\/api\/v2\/pokemon-species\//, "");
+  let pokeId = url.replace(/https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/|\//g, "");
   return pokeId;
 }
 

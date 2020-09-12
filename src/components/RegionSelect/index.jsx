@@ -1,0 +1,45 @@
+import React, {useState, useEffect} from 'react';
+import './styles.css';
+import capitalize from '../../functions/capitalize';
+import api from '../../services/api';
+
+const RegionSelect = ({regionChange, regionValue}) => {
+
+  const [regions, setRegions] = useState([]);
+  const [currentReg, setCurrentReg] = useState(1);
+
+  const api_call = async () => {
+
+    const regionRequest = api.get('pokedex/');
+    const regionResponse = await regionRequest;
+    setRegions(regionResponse.data.results);
+  }
+
+  useEffect(() => {
+    api_call();
+  },[currentReg]);
+
+  const getRegionId = (url) => {
+    let regionId = url.replace(/https:\/\/pokeapi.co\/api\/v2\/pokedex\/|\//g, "");
+    return regionId;
+  }
+
+  return (
+    <>
+      <div className="select-container">
+        <select className="regions-options" value={regionValue} onChange={regionChange}>
+          {regions && regions.map((region) => {
+            return (<option 
+                      value={getRegionId(region.url)}
+                      key={getRegionId(region.url)}>{region.name}
+                    </option>);
+            })}
+        </select>
+      </div>
+      <div className="space-div">
+      </div>
+    </>
+  );
+}
+
+export default RegionSelect;

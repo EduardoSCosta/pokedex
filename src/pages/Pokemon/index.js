@@ -3,6 +3,7 @@ import './styles.css';
 import api from '../../services/api.js';
 import PokeStats from '../../components/PokeStats';
 import PageHeader from '../../components/PageHeader';
+import capitalize from '../../functions/capitalize';
 
 const Pokemon = ({match}) => {
 
@@ -15,12 +16,6 @@ const Pokemon = ({match}) => {
     const pokeRequest = api.get(`pokemon/${pokemonId}`);
     const pokeResponse = await pokeRequest;
     setPokeData(pokeResponse.data);
-  }
-
-  const capitalize = (name) => {
-    let capitalized = name.charAt(0).toUpperCase() + name.slice(1);
-  
-    return capitalized;
   }
 
   useEffect(() => {
@@ -47,10 +42,3 @@ const Pokemon = ({match}) => {
 }
 
 export default Pokemon;
-
-/*
-      {pokeData.stats.map((poke) => {
-      return (<p 
-                key={poke.stat.name}>{poke.stat.name} {poke.base_stat}</p>);
-      })}
-*/
