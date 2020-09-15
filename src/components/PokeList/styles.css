@@ -1,3 +1,9 @@
+.poke-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 86px;
+}
+
 .poke-name {
   text-decoration: none;
   background-color: #eeeeee;
@@ -17,4 +23,10 @@
 .poke-name-text {
   position: relative;
   left: 20px;
+}
+
+@media(orientation: portrait) {
+  .poke-list {
+    margin-top: 129px;
+  }
 }

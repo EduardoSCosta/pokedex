@@ -6,10 +6,8 @@ import api from '../../services/api';
 const RegionSelect = ({regionChange, regionValue}) => {
 
   const [regions, setRegions] = useState([]);
-  const [currentReg, setCurrentReg] = useState(1);
 
   const api_call = async () => {
-
     const regionRequest = api.get('pokedex/');
     const regionResponse = await regionRequest;
     setRegions(regionResponse.data.results);
@@ -17,7 +15,7 @@ const RegionSelect = ({regionChange, regionValue}) => {
 
   useEffect(() => {
     api_call();
-  },[currentReg]);
+  },[]);
 
   const getRegionId = (url) => {
     let regionId = url.replace(/https:\/\/pokeapi.co\/api\/v2\/pokedex\/|\//g, "");
@@ -35,8 +33,6 @@ const RegionSelect = ({regionChange, regionValue}) => {
                     </option>);
             })}
         </select>
-      </div>
-      <div className="space-div">
       </div>
     </>
   );

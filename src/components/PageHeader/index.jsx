@@ -5,13 +5,11 @@ import {Link} from 'react-router-dom';
 const PageHeader = () => {
   return (
     <>
-    <nav className='navbar'>
-      <Link to='/' className="home-page">
-        Pokédex
-      </Link>
-    </nav>
-    <div className="space-div">
-    </div>
+      <nav className='navbar'>
+        <Link to='/' className="home-page">
+          Pokédex
+        </Link>
+      </nav>
     </>
   );
 }
