@@ -19,6 +19,12 @@ const getPokeId = (url) => {
       return (<Link 
                 className="poke-name" to={`/pokemon/${getPokeId(poke.pokemon_species.url)}`} 
                 key={poke.entry_number}>
+                  <div className="poke-sprite-container">
+                    <img className="poke-sprite" 
+                        src={`https://www.serebii.net/pokedex-swsh/icon/${pokeEntry(getPokeId(poke.pokemon_species.url))}.png`} 
+                        alt={`${capitalize(poke.pokemon_species.name)} sprite`}/>
+                  </div>
+                  
                   <span className="poke-name-text">#{pokeEntry(poke.entry_number)} {capitalize(poke.pokemon_species.name)}</span>
               </Link>);
       })}

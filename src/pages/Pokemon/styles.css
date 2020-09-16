@@ -1,20 +1,33 @@
 .poke-description {
-  margin-top: 43px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;  
+  background-color: #f1f1f1;
+  height: 100vh;
+}
+
+.poke-number-name {
+  margin-top: 50px;
+  font-size: 2rem;
+}
+
+.poke-pic-container {
+  height: 256px;
+  width: 256px;
+  margin: 10px 0 10px 0;
+  background-color: #ffffff;
+  border: solid 5px;
+  border-color: #747474;
+  border-radius: 50%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.poke-number-name {
-  padding-top: 10px;
-  font-size: 2rem;
-}
-
 .poke-pic {
-  height: 256px;
+  height: 230px;
   width: auto;
-  margin: 10px 0 10px 0;
 }
 
 ul {

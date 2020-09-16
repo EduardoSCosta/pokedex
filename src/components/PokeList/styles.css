@@ -13,20 +13,47 @@
   border-width: 0 0 1px 0;
   border-color: #c2c2c2;
   width: 100%;
-  padding: 10px 0 10px 0;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .poke-name:hover {
   background-color: #e2e2e2;
 }
 
+.poke-sprite-container {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px 0 10px;
+  padding: 5px;
+  border: solid 1px;
+  border-color: #c2c2c2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.poke-sprite {
+  height: 30px;
+  width: auto;
+  background-color: #ffffff;
+}
+
 .poke-name-text {
-  position: relative;
-  left: 20px;
+
 }
 
 @media(orientation: portrait) {
   .poke-list {
     margin-top: 129px;
   }
+
+  .poke-name-text {
+    font-size: 1rem;
+  }
+
 }

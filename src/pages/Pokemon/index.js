@@ -29,7 +29,9 @@ const Pokemon = ({match}) => {
       <PageHeader/>
       <div className="poke-description">
         <h1 className="poke-number-name">#{pokeEntry(pokemonId)} {pokeData.name && capitalize(pokeData.name)}</h1>
+        <div className="poke-pic-container">
         <img className="poke-pic" src={`https://www.serebii.net/pokemon/art/${pokeEntry(pokemonId)}.png`} alt="Sprite"/>
+        </div>
         <PokeType types={pokeData.types}/>
         <ul className="stats-list">
           <PokeStats stats={pokeData.stats}/>
