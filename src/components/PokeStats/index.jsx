@@ -1,4 +1,5 @@
 import React from 'react';
+import statsName from '../../functions/statsName';
 import './styles.css';
 
 const PokeStats = ({
@@ -8,8 +9,8 @@ const PokeStats = ({
   return (
     <>
       {stats && stats.map((stat) => {
-      return (<li 
-                key={stat.stat.name}>{stat.stat.name} {stat.base_stat}
+      return (<li className="poke-stats"
+                key={stat.stat.name}> <span>{statsName(stat.stat.name)}</span><span>{stat.base_stat}</span>  
               </li>);
       })}
     </>

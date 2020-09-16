@@ -4,6 +4,8 @@ import api from '../../services/api.js';
 import PokeStats from '../../components/PokeStats';
 import PageHeader from '../../components/PageHeader';
 import capitalize from '../../functions/capitalize';
+import PokeType from '../../components/PokeType';
+import pokeEntry from '../../functions/pokeEntry';
 
 const Pokemon = ({match}) => {
 
@@ -25,18 +27,14 @@ const Pokemon = ({match}) => {
   return(
     <>
       <PageHeader/>
-      <h1>#{pokemonId} {pokeData.name && capitalize(pokeData.name)}</h1>
-      <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`} alt="Sprite"/>
-      <div className="types-container">
-        {pokeData.types && pokeData.types.map((pokeType) => {
-        return (<p className={`poke-type ${pokeType.type.name}-type`}
-                  key={pokeType.type.name}>{pokeType.type.name}
-                </p>);
-        })}
+      <div className="poke-description">
+        <h1 className="poke-number-name">#{pokeEntry(pokemonId)} {pokeData.name && capitalize(pokeData.name)}</h1>
+        <img className="poke-pic" src={`https://www.serebii.net/pokemon/art/${pokeEntry(pokemonId)}.png`} alt="Sprite"/>
+        <PokeType types={pokeData.types}/>
+        <ul className="stats-list">
+          <PokeStats stats={pokeData.stats}/>
+        </ul>
       </div>
-      <ul>
-      <PokeStats stats={pokeData.stats}/>
-      </ul>
     </>
   );
 }

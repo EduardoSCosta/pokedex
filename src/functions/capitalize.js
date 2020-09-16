@@ -1,5 +1,5 @@
-const capitalize = (pokeName) => {
-  let capitalized = pokeName.charAt(0).toUpperCase() + pokeName.slice(1);
+const capitalize = (name) => {
+  let capitalized = name.charAt(0).toUpperCase() + name.slice(1);
 
   return capitalized;
 }

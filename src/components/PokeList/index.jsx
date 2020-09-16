@@ -19,7 +19,7 @@ const getPokeId = (url) => {
       return (<Link 
                 className="poke-name" to={`/pokemon/${getPokeId(poke.pokemon_species.url)}`} 
                 key={poke.entry_number}>
-                  <span className="poke-name-text"> {pokeEntry(poke.entry_number)} {capitalize(poke.pokemon_species.name)}</span>
+                  <span className="poke-name-text">#{pokeEntry(poke.entry_number)} {capitalize(poke.pokemon_species.name)}</span>
               </Link>);
       })}
     </div>

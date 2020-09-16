@@ -1,101 +1,29 @@
+.poke-description {
+  margin-top: 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.poke-number-name {
+  padding-top: 10px;
+  font-size: 2rem;
+}
+
+.poke-pic {
+  height: 256px;
+  width: auto;
+  margin: 10px 0 10px 0;
+}
+
 ul {
   list-style: none;
   text-align: left;
 }
 
-li{
-  margin: 5px;
+@media(orientation: portrait) {
+  .poke-number-name {
+    font-size: 1.2rem;
+  }
 }
-.types-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.poke-type {
-  border: solid 2px;
-  border-color: #000000;
-  border-radius: 20px;
-  padding: 3px 10px 3px 10px;
-  color: #ffffff;
-  text-shadow: 2px 0 0 #000000, 
-              -2px 0 0 #000000, 
-              0 2px 0 #000000, 
-              0 -2px 0 #000000, 
-              1px 1px #000000, 
-              -1px -1px 0 #000000, 
-              1px -1px 0 #000000, 
-              -1px 1px 0 #000000;
-}
-
-.normal-type {
-  background-color: #A8A77A;
-}
-
-.fighting-type {
-  background-color: #C22E28;
-}
-
-.flying-type {
-  background-color: #A98FF3;
-}
-
-.poison-type {
-  background-color: #A33EA1;
-}
-
-.ground-type {
-  background-color: #E2BF65;
-}
-
-.rock-type {
-  background-color: #B6A136;
-}
-
-.bug-type {
-  background-color: #A6B91A;
-}
-
-.ghost-type {
-  background-color: #735797;
-}
-
-.steel-type {
-  background-color: #B7B7CE;
-}
-
-.fire-type {
-  background-color: #EE8130;
-}
-
-.water-type {
-  background-color: #6390F0;
-}
-
-.grass-type {
-  background-color: #7AC74C;
-}
-
-.electric-type {
-  background-color: #F7D02C;
-}
-
-.psychic-type {
-  background-color: #F95587;
-}
-
-.ice-type {
-  background-color: #96D9D6;
-}
-
-.dragon-type {
-  background-color: #6F35FC;
-}
-
-.dark-type {
-  background-color: #705746;
-}
-
-.fairy-type {
-  background-color: #D685AD;
-}
-

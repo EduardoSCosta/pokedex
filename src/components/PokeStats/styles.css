@@ -1,0 +1,7 @@
+.poke-stats{
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}

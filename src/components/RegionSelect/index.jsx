@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './styles.css';
-import capitalize from '../../functions/capitalize';
+import regionDexName from '../../functions/regionDexName';
 import api from '../../services/api';
 
 const RegionSelect = ({regionChange, regionValue}) => {
@@ -29,7 +29,7 @@ const RegionSelect = ({regionChange, regionValue}) => {
           {regions && regions.map((region) => {
             return (<option 
                       value={getRegionId(region.url)}
-                      key={getRegionId(region.url)}>{region.name}
+                      key={getRegionId(region.url)}>{regionDexName(region.name)}
                     </option>);
             })}
         </select>
