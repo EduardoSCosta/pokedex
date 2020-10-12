@@ -25,7 +25,7 @@ const RegionSelect = ({regionChange, regionValue}) => {
   return (
     <>
       <div className="select-container">
-        <select className="regions-options" value={regionValue} onChange={regionChange}>
+        <select className="regions-options" value={regionValue} defaultValue={regionValue} onChange={regionChange}>
           {regions && regions.map((region) => {
             return (<option 
                       value={getRegionId(region.url)}

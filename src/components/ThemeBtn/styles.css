@@ -1,0 +1,13 @@
+.theme-switch {
+  background: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  outline: none;
+  padding: 5px;
+}
+
+.theme-icon{
+  opacity: 0.4;
+  height: 32px;
+}

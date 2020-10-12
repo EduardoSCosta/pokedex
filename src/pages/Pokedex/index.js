@@ -5,13 +5,33 @@ import PokeList from '../../components/PokeList';
 import PageHeader from '../../components/PageHeader';
 import RegionSelect from '../../components/RegionSelect';
 import lensIcon from '../../assets/icons/wide_lens_gray.png'
+import ThemeBtn from '../../components/ThemeBtn';
 
 const Pokedex = () => {
 
+  const regionData = () => {
+    const data = localStorage.getItem("pokeRegion");    
+    if(data) {
+      return data;
+    } else {
+      return 1;
+    }
+  }
+
+  const scrollYPos = () => {
+    const scrYPos = sessionStorage.getItem("scrollYPosition");
+    if (scrYPos) {
+      return scrYPos;
+    } else {
+      return 0;
+    }
+  }
+  
   const [pokemons, setPokemons] = useState([]);
-  const [regionDex, setRegionDex] = useState(1);
+  const [regionDex, setRegionDex] = useState(regionData());
   const [search, setSearch] = useState("");
   const [pokeFiltered, setPokeFiltered] = useState([]);
+  const [vertScroll, setVertScroll] = useState(scrollYPos());
 
   const api_call = async () => {
     const pokeRequest = api.get(`pokedex/${regionDex}/`);
@@ -21,16 +41,33 @@ const Pokedex = () => {
 
   useEffect(() => {
     api_call();
+    localStorage.setItem("pokeRegion", regionDex);
+    setVertScroll(0);
   }, [regionDex]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", function(){ setVertScroll(window.pageYOffset); });
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem("scrollYPosition", vertScroll);
+  }, [vertScroll]);
 
   useEffect(() => {
     setPokeFiltered(pokemons.filter(pokemon => pokemon.pokemon_species.name.toLowerCase().includes(search.toLowerCase())));
   }, [search, pokemons]);
 
+  useEffect(() => {
+    setTimeout(function scrollToLastPoint() {
+      window.scroll(0, vertScroll);
+    }, 1000);    
+  }, []);
+
   return(
     <>
       <PageHeader/>
-      <RegionSelect regValue={regionDex} regionChange={e => {setRegionDex(e.target.value)}}/>
+      <RegionSelect regionValue={regionDex} regionChange={e => {setRegionDex(e.target.value)}}/>
+      <ThemeBtn/>
       <div className="search-container">
         <div className="search-wrapper">
           <img className="search-icon" src={lensIcon} alt="Search Icon"/>

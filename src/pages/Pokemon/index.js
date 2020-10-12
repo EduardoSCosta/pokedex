@@ -6,11 +6,13 @@ import PageHeader from '../../components/PageHeader';
 import capitalize from '../../functions/capitalize';
 import PokeType from '../../components/PokeType';
 import pokeEntry from '../../functions/pokeEntry';
+import ThemeBtn from '../../components/ThemeBtn';
+import {useTheme} from '../../contexts/Theme';
 
 const Pokemon = ({match}) => {
 
+  const { theme } = useTheme();
   const {params: {pokemonId},} = match;
-
   const [pokeData, setPokeData] = useState([]);
 
   const api_call = async () => {
@@ -27,8 +29,8 @@ const Pokemon = ({match}) => {
   return(
     <>
       <PageHeader/>
-      <div className="poke-description">
-        <h1 className="poke-number-name">#{pokeEntry(pokemonId)} {pokeData.name && capitalize(pokeData.name)}</h1>
+      <div className={`poke-description ${theme}`}>
+        <h1 className={`poke-number-name ${theme}`}>#{pokeEntry(pokemonId)} {pokeData.name && capitalize(pokeData.name)}</h1>
         <div className="poke-pic-container">
         <img className="poke-pic" src={`https://www.serebii.net/pokemon/art/${pokeEntry(pokemonId)}.png`} alt="Sprite"/>
         </div>
@@ -36,6 +38,7 @@ const Pokemon = ({match}) => {
         <ul className="stats-list">
           <PokeStats stats={pokeData.stats}/>
         </ul>
+        <ThemeBtn/>
       </div>
     </>
   );

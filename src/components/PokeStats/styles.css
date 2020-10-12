@@ -5,3 +5,11 @@
   justify-content: space-between;
   width: 100%;
 }
+
+li.white-theme {
+ color: #000000;
+}
+
+li.dark-theme {
+  color: #e2e2e2;
+}

@@ -3,10 +3,13 @@ import './styles.css';
 import {Link} from 'react-router-dom';
 import pokeEntry from '../../functions/pokeEntry';
 import capitalize from '../../functions/capitalize';
+import {useTheme} from '../../contexts/Theme';
 
 const PokeList = ({
   pokemons
 }) => {
+
+const { theme } = useTheme();
 
 const getPokeId = (url) => {
   let pokeId = url.replace(/https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/|\//g, "");
@@ -17,7 +20,7 @@ const getPokeId = (url) => {
     <div className="poke-list">
       {pokemons.map((poke) => {
       return (<Link 
-                className="poke-name" to={`/pokemon/${getPokeId(poke.pokemon_species.url)}`} 
+                className={`poke-name ${theme}`} to={`/pokemon/${getPokeId(poke.pokemon_species.url)}`} 
                 key={poke.entry_number}>
                   <div className="poke-sprite-container">
                     <img className="poke-sprite" 
