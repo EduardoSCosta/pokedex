@@ -47,6 +47,7 @@ a.dark-theme:hover {
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 .poke-sprite {

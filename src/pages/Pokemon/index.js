@@ -5,7 +5,6 @@ import PokeStats from '../../components/PokeStats';
 import PageHeader from '../../components/PageHeader';
 import capitalize from '../../functions/capitalize';
 import PokeType from '../../components/PokeType';
-import pokeEntry from '../../functions/pokeEntry';
 import ThemeBtn from '../../components/ThemeBtn';
 import {useTheme} from '../../contexts/Theme';
 
@@ -30,9 +29,9 @@ const Pokemon = ({match}) => {
     <>
       <PageHeader/>
       <div className={`poke-description ${theme}`}>
-        <h1 className={`poke-number-name ${theme}`}>#{pokeEntry(pokemonId)} {pokeData.name && capitalize(pokeData.name)}</h1>
+        <h1 className={`poke-number-name ${theme}`}>#{('000' + (pokemonId)).slice(-3)} {pokeData.name && capitalize(pokeData.name)}</h1>
         <div className="poke-pic-container">
-        <img className="poke-pic" src={`https://www.serebii.net/pokemon/art/${pokeEntry(pokemonId)}.png`} alt="Sprite"/>
+        <img className="poke-pic" src={`https://www.serebii.net/pokemon/art/${('000' + (pokemonId)).slice(-3)}.png`} alt="Sprite"/>
         </div>
         <PokeType types={pokeData.types}/>
         <ul className="stats-list">

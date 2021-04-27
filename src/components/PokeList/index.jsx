@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.css';
 import {Link} from 'react-router-dom';
-import pokeEntry from '../../functions/pokeEntry';
 import capitalize from '../../functions/capitalize';
 import {useTheme} from '../../contexts/Theme';
 
@@ -24,11 +23,11 @@ const getPokeId = (url) => {
                 key={poke.entry_number}>
                   <div className="poke-sprite-container">
                     <img className="poke-sprite" 
-                        src={`https://www.serebii.net/pokedex-swsh/icon/${pokeEntry(getPokeId(poke.pokemon_species.url))}.png`} 
+                        src={`https://www.serebii.net/pokedex-swsh/icon/${('000' + (getPokeId(poke.pokemon_species.url))).slice(-3)}.png`} 
                         alt={`${capitalize(poke.pokemon_species.name)} sprite`}/>
                   </div>
                   
-                  <span className="poke-name-text">#{pokeEntry(poke.entry_number)} {capitalize(poke.pokemon_species.name)}</span>
+                  <span className="poke-name-text">#{('000' + (poke.entry_number)).slice(-3)} {capitalize(poke.pokemon_species.name)}</span>
               </Link>);
       })}
     </div>
