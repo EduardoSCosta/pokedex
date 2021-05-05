@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 43px;
+  top: 40px;
 }
 
 .regions-options {
@@ -31,7 +31,7 @@
 
 @media(orientation: portrait) {
   .select-container {
-    top: 86px;
+    top: 80px;
     border-top-color: #414141;
   }  
 }

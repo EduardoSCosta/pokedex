@@ -1,9 +1,9 @@
 .poke-description {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;  
-  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
 }
 
 div.white-theme {
@@ -38,6 +38,7 @@ h1.dark-theme {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .poke-pic {

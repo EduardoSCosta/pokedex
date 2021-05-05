@@ -6,6 +6,7 @@ import PageHeader from '../../components/PageHeader';
 import RegionSelect from '../../components/RegionSelect';
 import lensIcon from '../../assets/icons/wide_lens_gray.png'
 import ThemeBtn from '../../components/ThemeBtn';
+import PageFooter from '../../components/PageFooter';
 
 const Pokedex = () => {
 
@@ -75,6 +76,7 @@ const Pokedex = () => {
         </div>
       </div>
       <PokeList pokemons={pokeFiltered}/>
+      <PageFooter/>
     </>
   );
 }

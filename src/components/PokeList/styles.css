@@ -1,7 +1,7 @@
 .poke-list {
   display: flex;
   flex-direction: column;
-  margin-top: 86px;
+  margin-top: 80px;
 }
 
 .poke-name {
@@ -37,32 +37,27 @@ a.dark-theme:hover {
 }
 
 .poke-sprite-container {
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   margin: 0 10px 0 10px;
-  padding: 5px;
   border: solid 1px;
   border-color: #c2c2c2;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .poke-sprite {
-  height: 30px;
+  height: 35px;
   width: auto;
   background-color: #ffffff;
 }
 
-.poke-name-text {
-
-}
-
 @media(orientation: portrait) {
   .poke-list {
-    margin-top: 129px;
+    margin-top: 120px;
   }
 
   .poke-name-text {

@@ -6,6 +6,7 @@ import PageHeader from '../../components/PageHeader';
 import capitalize from '../../functions/capitalize';
 import PokeType from '../../components/PokeType';
 import ThemeBtn from '../../components/ThemeBtn';
+import PageFooter from '../../components/PageFooter';
 import {useTheme} from '../../contexts/Theme';
 
 const Pokemon = ({match}) => {
@@ -38,6 +39,7 @@ const Pokemon = ({match}) => {
           <PokeStats stats={pokeData.stats}/>
         </ul>
         <ThemeBtn/>
+        <PageFooter/>
       </div>
     </>
   );
