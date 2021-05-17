@@ -44,11 +44,15 @@ h1.dark-theme {
 .poke-pic {
   height: 230px;
   width: auto;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
 }
 
-ul {
-  list-style: none;
-  text-align: left;
+.stats-list {
+  border-spacing: 0px;
 }
 
 @media(orientation: portrait) {

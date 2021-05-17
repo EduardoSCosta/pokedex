@@ -46,13 +46,17 @@ a.dark-theme:hover {
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  overflow: hidden;
+  overflow: hidden;  
 }
 
 .poke-sprite {
   height: 35px;
   width: auto;
   background-color: #ffffff;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
 }
 
 @media(orientation: portrait) {

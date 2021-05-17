@@ -10,10 +10,15 @@ const PokeStats = ({
   
   return (
     <>
+      <tr className={`poke-stats ${theme}`}>
+        <th>Stat</th>
+        <th>Base</th>
+      </tr>
       {stats && stats.map((stat) => {
-      return (<li className={`poke-stats ${theme}`}
-                key={stat.stat.name}> <span>{statsName(stat.stat.name)}</span><span>{stat.base_stat}</span>  
-              </li>);
+      return (<tr className={`poke-stats ${theme}`} key={stat.stat.name}>
+                <td>{statsName(stat.stat.name)}</td>
+                <td>{stat.base_stat}</td>  
+              </tr>);
       })}
     </>
   );

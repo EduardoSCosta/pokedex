@@ -1,15 +1,27 @@
-.poke-stats{
-  margin: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+td, th {
+  padding: 4px;
 }
 
-li.white-theme {
+th:first-child, td:first-child{
+  text-align: left;
+}
+
+th:last-child, td:last-child{
+  text-align: right;
+}
+
+tr.white-theme {
  color: #000000;
 }
 
-li.dark-theme {
+tr.dark-theme {
   color: #e2e2e2;
+}
+
+tr:nth-child(odd).white-theme {
+  background-color: #dddddd;
+}
+
+tr:nth-child(odd).dark-theme {
+  background-color: #2e2e2e;
 }

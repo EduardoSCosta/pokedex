@@ -26,6 +26,11 @@
   height: 24px;
   width: auto;
   margin-left: 8px;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
 }
 
 .search-input {

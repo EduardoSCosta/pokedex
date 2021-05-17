@@ -35,9 +35,9 @@ const Pokemon = ({match}) => {
         <img className="poke-pic" src={`https://www.serebii.net/pokemon/art/${('000' + (pokemonId)).slice(-3)}.png`} alt="Sprite"/>
         </div>
         <PokeType types={pokeData.types}/>
-        <ul className="stats-list">
+        <table className="stats-list">
           <PokeStats stats={pokeData.stats}/>
-        </ul>
+        </table>
         <ThemeBtn/>
         <PageFooter/>
       </div>
