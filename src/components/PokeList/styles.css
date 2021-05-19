@@ -19,7 +19,7 @@
 }
 
 a.white-theme {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
   color: #000000;
 }
 
@@ -29,7 +29,7 @@ a.dark-theme {
 }
 
 a.white-theme:hover {
-  background-color: #e2e2e2;
+  background-color: #ececec;
 }
 
 a.dark-theme:hover {

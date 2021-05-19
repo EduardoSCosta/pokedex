@@ -29,3 +29,10 @@ footer span{
 .footer-links a:visited {
   color: #ffffff;
 }
+
+@media (max-width: 480px) {
+  footer span{
+    color: #ffffff;
+    font-size: 0.6rem;
+  }
+}

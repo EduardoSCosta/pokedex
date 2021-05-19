@@ -27,6 +27,7 @@
   text-align-last: center;
   text-align: center;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 @media(orientation: portrait) {

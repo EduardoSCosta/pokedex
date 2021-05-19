@@ -72,7 +72,7 @@ const Pokedex = () => {
       <div className="search-container">
         <div className="search-wrapper">
           <img className="search-icon" src={lensIcon} alt="Search Icon"/>
-          <input className="search-input" type="text" placeholder="Pokesearch" onChange={e => {setSearch(e.target.value)}}/>
+          <input className="search-input" type="text" placeholder="Pokésearch" onChange={e => {setSearch(e.target.value)}}/>
         </div>
       </div>
       <PokeList pokemons={pokeFiltered}/>
