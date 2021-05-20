@@ -3,25 +3,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
 }
 
 @keyframes spinner-rotation{
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
+  0% {transform: rotate(30deg);}
+  20% {transform: rotate(50deg);}
+  100% {transform: rotate(30deg);}
 }
 
-@keyframes spinner-brightness{
-  0% {filter: brightness(90%);}
-  50% {filter: brightness(130%);}
-  100% {filter: brightness(90%);}
+@keyframes spinner-color{
+  0% {background-color: #ffffff;}
+  20% {background-color: #fa5252;}
+  100% {background-color: #ffffff;}
 }
 
 .spinner {
-  background-color: #ffffff;
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 50%;
   width: 150px;
   height: 150px;
-  animation: spinner-rotation 8s infinite linear,
-              spinner-brightness 3s infinite linear;
+  transform: rotate(30deg);
+  animation: spinner-rotation 1s infinite ease-out,
+              spinner-color 1s infinite ease-out;
 }

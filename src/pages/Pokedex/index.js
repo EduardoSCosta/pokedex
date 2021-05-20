@@ -44,9 +44,12 @@ const Pokedex = () => {
     const pokeRequest = api.get(`pokedex/${regionDex}/`);
     const pokeResponse = await pokeRequest;
     setPokemons(pokeResponse.data.pokemon_entries);
-    
-    setIsLoading(false);
-    setHideResults("visible");
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setHideResults("visible");
+    }, 2000);
+    return () => clearTimeout(timer);
   }
 
   useEffect(() => {

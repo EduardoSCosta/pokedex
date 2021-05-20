@@ -17,7 +17,7 @@ const getPokeId = (url) => {
 }
 
   return (
-    <div className={`poke-list ${hideResults}`}>
+    <div className={`poke-list ${hideResults} ${theme}`}>
       {pokemons.map((poke) => {
       return (<Link 
                 className={`poke-name ${theme}`} to={`/pokemon/${getPokeId(poke.pokemon_species.url)}`} 

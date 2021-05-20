@@ -1,15 +1,17 @@
 .theme-switch {
   background: none;
   position: fixed;
-  bottom: 0;
-  right: 0;
+  top: 0;
+  right: 5px;
   outline: none;
-  padding: 5px;
+  z-index: 1000;
+  height: 40px;
+  width: 40px;
 }
 
 .theme-icon{
-  opacity: 0.4;
-  height: 32px;
+  opacity: 0.8;
+  height: 28px;
 
   user-select: none;
   -moz-user-select: none;
