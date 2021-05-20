@@ -5,7 +5,8 @@ import capitalize from '../../functions/capitalize';
 import {useTheme} from '../../contexts/Theme';
 
 const PokeList = ({
-  pokemons
+  pokemons,
+  hideResults
 }) => {
 
 const { theme } = useTheme();
@@ -16,7 +17,7 @@ const getPokeId = (url) => {
 }
 
   return (
-    <div className="poke-list">
+    <div className={`poke-list ${hideResults}`}>
       {pokemons.map((poke) => {
       return (<Link 
                 className={`poke-name ${theme}`} to={`/pokemon/${getPokeId(poke.pokemon_species.url)}`} 

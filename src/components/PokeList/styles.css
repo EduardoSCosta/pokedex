@@ -4,6 +4,14 @@
   margin-top: 80px;
 }
 
+.poke-list.hidden {
+  display: none;
+}
+
+.poke-list.visible {
+  display: flex;
+}
+
 .poke-name {
   text-decoration: none;
   font-size: 1.2rem;

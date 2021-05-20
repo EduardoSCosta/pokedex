@@ -7,6 +7,7 @@ import RegionSelect from '../../components/RegionSelect';
 import lensIcon from '../../assets/icons/wide_lens_gray.png'
 import ThemeBtn from '../../components/ThemeBtn';
 import PageFooter from '../../components/PageFooter';
+import Loading from '../../components/Loading';
 
 const Pokedex = () => {
 
@@ -33,11 +34,19 @@ const Pokedex = () => {
   const [search, setSearch] = useState("");
   const [pokeFiltered, setPokeFiltered] = useState([]);
   const [vertScroll, setVertScroll] = useState(scrollYPos());
+  const [isLoading, setIsLoading] = useState(true);
+  const [hideResults, setHideResults] = useState("visible");
 
   const api_call = async () => {
+    setIsLoading(true);
+    setHideResults("hidden");
+
     const pokeRequest = api.get(`pokedex/${regionDex}/`);
     const pokeResponse = await pokeRequest;
     setPokemons(pokeResponse.data.pokemon_entries);
+    
+    setIsLoading(false);
+    setHideResults("visible");
   }
 
   useEffect(() => {
@@ -75,7 +84,8 @@ const Pokedex = () => {
           <input className="search-input" type="text" placeholder="Pokésearch" onChange={e => {setSearch(e.target.value)}}/>
         </div>
       </div>
-      <PokeList pokemons={pokeFiltered}/>
+      {isLoading && <Loading/>}
+      <PokeList pokemons={pokeFiltered} hideResults={hideResults}/>
       <PageFooter/>
     </>
   );
