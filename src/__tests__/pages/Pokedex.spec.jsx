@@ -12,8 +12,8 @@ jest.mock('react-router-dom', () => {
 describe('Pokedex Page', () => {
   it('should be able to list pokemons', () => {
     const { debug } = render(<ThemeProvider>
-      <Pokedex/>
-    </ThemeProvider>);
+                                <Pokedex/>
+                              </ThemeProvider>);
 
     debug();
   });
