@@ -17,12 +17,13 @@ This project was developed with React JS and the data was obtained through [Pok√
 
 ### Available Scripts
 
-To install the project dependencies, use:
-  
+To install the project dependencies, use:  
 ```sh
 yarn install
 ```
-  
+
+##
+
 To run this application, use:
 ```sh
 yarn start
