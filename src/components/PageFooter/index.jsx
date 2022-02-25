@@ -6,7 +6,7 @@ import './styles.css';
 const PageFooter = () => {
   return (
     <footer>
-      <span>2021 | Eduardo Souza</span>
+      <span>{new Date().getFullYear()} | Eduardo Souza</span>
       <div className="footer-links">
         <a href="https://www.linkedin.com/in/eduardo-souza-costa-araujo/" 
           rel="noreferrer noopener"
